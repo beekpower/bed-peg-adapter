@@ -16,9 +16,9 @@ carries the load again.
 ```
    ┌┐                  ┌┐   ← snap lips hook over the top edges of the rail
    ││    ┌────────┐    ││
-   ││    │  rail  │    ││   ← side walls hug the 27 x 27 mm rail
-   ││    │ 27x27  │    ││
-   │└────┴────────┴────┘│   ← 3 mm floor: the rail sits on it
+   ││    │  rail  │    ││   ← side walls hug the 27 x 27 mm rail;
+   │ \   │ 27x27  │   / │     they taper from 5.5 mm at the root to 3.5 mm
+   │  \──┴────────┴──/  │   ← 3 mm floor: the rail sits on it
    └──┐ ┌─┐      ┌─┐ ┌──┘
       │ │ │ plug │ │ │      ← plug slides inside the leg (22 mm bore), crush ribs grip it
       │ │ │      │ │ │      ← sleeve goes around the leg, bored to clear the weld seams
@@ -44,7 +44,7 @@ open space above the rail.
 | Rail cross-section | 27 x 27 mm | `RAIL_W`, `RAIL_H` |
 | Floor to underside of rail | 12" (305 mm) | leg length; the floor adds 3 mm (`FLOOR`) |
 
-Part size: 36 x 36 x 58 mm, about 27 cm³.
+Part size: 38 x 36 x 57 mm, about 30 cm³.
 
 ## Files
 
@@ -81,22 +81,38 @@ Generic PETG profile.
   both start on the bed, and first-layer squish would make the fit tight.
   Horizontal Expansion and Hole Horizontal Expansion stay at 0; the model
   already includes the clearances.
-- **Full part:** 5 walls, 60% infill, 8 top and 8 bottom layers. The 3 mm floor
-  is 15 layers, so 8 + 8 makes it solid. 100% infill isn't needed and tends to
+- **Full part:** 7 walls, 60% infill, 8 top and 8 bottom layers. 7 walls
+  (2.8 mm from each face) make the 5.5 mm wall roots solid plastic; the 3 mm
+  floor is 15 layers, so 8 + 8 makes it solid too. 100% infill isn't needed and tends to
   make PETG fits tight.
 - **Fit test:** 2 walls, 10% infill, 3 top/bottom layers. Fine to print fast.
 - **Speed:** 35 mm/s overall, or 45 mm/s with the outer wall at 30 mm/s if your
   Cura shows per-feature speeds. The outer wall sets the fit.
-- **PETG:** 235 °C nozzle, 75–80 °C bed, 30–50% fan, 5–6 mm retraction at
-  40 mm/s. Glue stick on glass.
+- **PETG:** 240 °C nozzle, 75–80 °C bed, 20–30% fan, 5–6 mm retraction at
+  40 mm/s. The hotter nozzle and lower fan bond the layers better, which is
+  what the walls rely on. Glue stick on glass.
+- **Removing it:** let the bed cool completely, then lever it off by the floor
+  plate. Never pull on the side walls: they bend across the layer lines, which
+  is the weakest direction.
 
 PETG was chosen over PLA because the snap lips flex when you fit the part and
 the floor carries a load full-time. PETG is tougher and creeps less. PLA would
 also work.
 
-**Fit test result:** snug, pushed fully home by hand with the leg rim flat
+**Fit test result (v1, plug and sleeve unchanged since):** snug, pushed fully home by hand with the leg rim flat
 against the floor. The full part's crush ribs are about 3x longer, so expect to
 press harder. Push the leg's foot against the floor or tap it with a mallet.
+
+## Revisions
+
+1. **v1** — 3 mm straight side walls, 1.8 mm lips. Fit the leg and rail well,
+   but both walls snapped off at the root while prying the part off the print
+   bed: the walls bend across the layer lines, the outer face had no support
+   below it, and the sharp inside corner concentrated the stress.
+2. **v2** — walls taper from 5.5 mm at the root to 3.5 mm at the lips, with the
+   floor plate widened underneath them, a 1 mm chamfer in the inside corner
+   (small enough to sit under the rail's rounded corner), and 1.5 mm lips so
+   the stiffer walls still flex over the rail. Plug and sleeve unchanged.
 
 ## Installing
 
@@ -114,8 +130,8 @@ press harder. Push the leg's foot against the floor or tap it with a mallet.
 |---|---|
 | Plug too tight / too loose in the leg | `RIB_BITE` down to 0.2 / up to 0.5 |
 | Sleeve catches on the welds | `SLEEVE_BORE` up to 30.5 |
-| Clip won't snap onto the rail | `WALL_T` 2.5, or `LIP` 1.2 |
-| Clip pops off too easily | `LIP` 2.2 |
+| Clip won't snap onto the rail | `WALL_TOP` 3.0, or `LIP` 1.2 |
+| Clip pops off too easily | `LIP` 1.8 |
 | A lip cracks (more likely in PLA) | `LIP` 1.2 |
 | Gap under the rail isn't exactly 12" | adjust `FLOOR` |
 | No screw holes wanted | `SCREW_D = 0` |
