@@ -14,7 +14,7 @@ leg carries the load again.
 ## How it works
 
 ```
-   ┌──────┐  ●══════●  ┌──────┐   ← two M6 bolts across the top, just above the rail
+   ┌──────┐  ●══════●  ┌──────┐   ← two M3 bolts across the top, just above the rail
    │      │ ┌──────┐ │      │
    │      │ │ rail │ │      │   ← thick side walls (8 mm at the root, 6 mm at the top)
    │       \│27 x 27│/       │
@@ -40,10 +40,11 @@ need open space just above the rail.
 
 ## Hardware
 
-- 2 × **M6 x 60 mm** bolts (or 1/4"-20 x 2½")
-- 2 × M6 nyloc nuts, 4 × M6 washers
+- 2 × **M3** bolts, at least 50 mm long (the part is 43 mm across)
+- 2 × M3 nuts (nyloc if you have them), 4 × M3 washers
 
-The part is 43 mm across, so anything from 55 to 70 mm long works.
+Use the washers: an M3 head or nut on its own digs into the plastic. For
+bigger bolts, change `BOLT_D` (6.6 for M6 or 1/4", 8.6 for M8) and rebuild.
 
 ## Measurements used
 
@@ -55,7 +56,7 @@ The part is 43 mm across, so anything from 55 to 70 mm long works.
 | Rail cross-section | 27 x 27 mm | `RAIL_W`, `RAIL_H` |
 | Floor to underside of rail | 12" (305 mm) | leg length; the floor adds 3 mm (`FLOOR`) |
 
-Part size: 43 x 44 x 82 mm, about 61 cm³.
+Part size: 43 x 44 x 79 mm, about 60 cm³.
 
 ## Files
 
@@ -121,7 +122,7 @@ against the floor or tap it with a mallet.
 2. Lift the centre rail slightly (the floor adds 3 mm), stand the leg under a
    plain stretch of rail, and slide the cradle up around the rail.
 3. Push both bolts through above the rail, with a washer on each side, and
-   tighten the nyloc nuts until the bolts sit snug on top of the rail. Don't
+   tighten the nuts until the bolts sit snug on top of the rail. Don't
    crank them: snug is enough, the job is to close the loop, not to clamp hard.
 
 ## Revisions
@@ -135,7 +136,7 @@ against the floor or tap it with a mallet.
    printed in layers: every push levered it at the root, across the layer
    lines, until it cracked.
 3. **v3**: no snap arms. Thick walls (8 mm → 6 mm) tied together over the rail
-   by two M6 bolts, so the cradle is a closed loop. Socket deepened from 25 to
+   by two bolts (M3 holes; `BOLT_D` sets the size), so the cradle is a closed loop. Socket deepened from 25 to
    40 mm so a kick on the leg has more plug to lever against. Floor lengthened
    to 44 mm along the rail, with a 45° skirt underneath so it prints without
    supports.
@@ -146,6 +147,6 @@ against the floor or tap it with a mallet.
 |---|---|
 | Plug too tight / too loose in the leg | `RIB_BITE` down to 0.2 / up to 0.5 |
 | Sleeve catches on the welds | `SLEEVE_BORE` up to 30.5 |
-| Using bigger bolts (M8 / 5/16") | `BOLT_D` 8.6 |
+| Using bigger bolts | `BOLT_D` 6.6 for M6 or 1/4", 8.6 for M8 |
 | Bolts don't reach the rail top / rail is taller | measure it and set `RAIL_H` |
 | Gap under the rail isn't exactly 12" | adjust `FLOOR` |

@@ -52,7 +52,7 @@ WALL_TOP  = 6.0     # side wall thickness at the top
 ROOT_CH   = 1.0     # 45 deg chamfer in the inside wall/floor corner; stays under the rail's rounded corner
 LENGTH    = 44.0    # length along the rail
 
-BOLT_D    = 6.6     # clearance hole for M6 or 1/4" bolts
+BOLT_D    = 3.4     # clearance hole for M3 bolts (6.6 for M6 or 1/4")
 BOLT_Y    = 12.0    # bolts sit at y = +/-BOLT_Y along the rail
 BOLT_GAP  = 0.2     # gap between the rail top and the bolts (snug them down onto the rail)
 BOLT_MEAT = 5.0     # plastic above each bolt hole
